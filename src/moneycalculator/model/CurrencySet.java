@@ -40,7 +40,7 @@ public class CurrencySet extends HashSet<Currency> {
     }
 
     public Currency[] search(String token) {
-        ArrayList<Currency> result = new ArrayList<Currency>();
+        ArrayList<Currency> result = new ArrayList<>();
         for (Currency currency : this) {
             if (currency.getCode().equalsIgnoreCase(token)) {
                 result.add(currency);
