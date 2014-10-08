@@ -2,7 +2,8 @@ package moneycalculator.persistence;
 
 import moneycalculator.model.Currency;
 
-public interface CurrencySetLoader {
-
-    public void load();
+public class CurrencySetLoader {
+    public CurrencySetLoader(Currency[] currency){
+    }
+    public void load(){};
 }
