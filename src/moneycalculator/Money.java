@@ -2,15 +2,15 @@ package moneycalculator;
 
 public class Money {
 
-    private final double amount;
-    private final Currency currency;
+    private Number amount;
+    private Currency currency;
 
-    public Money(double amount, Currency currency) {
+    public Money(Number amount, Currency currency) {
         this.amount = amount;
         this.currency = currency;
     }
 
-    public double getAmount() {
+    public Number getAmount() {
         return amount;
     }
 
