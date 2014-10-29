@@ -1,43 +1,42 @@
 package model;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class ExchangeRate {
 
-    private Currency from;
-    private Currency to;
-    private Number rate;
-    private Date date;
+    private Currency fromCurrency;
+    private Currency toCurrency;
+    private Calendar date;
+    private Exchange rate;
 
-    public ExchangeRate(Date date, Currency from, Currency to, Number rate) {
+    public ExchangeRate(Currency fromCurrency, Currency toCurrency, Calendar date, Exchange rate) {
+        this.fromCurrency = fromCurrency;
+        this.toCurrency = toCurrency;
         this.date = date;
-        this.from = from;
-        this.to = to;
         this.rate = rate;
     }
 
-    public ExchangeRate(Currency from, Currency to, Number rate) {
-        this(new Date(), from, to, rate);
+    public Currency getFromCurrency() {
+        return fromCurrency;
     }
 
-    public Currency getFrom() {
-        return from;
+    public Currency getToCurrency() {
+        return toCurrency;
     }
 
-    public Currency getTo() {
-        return to;
-    }
-
-    public Number getRate() {
-        return rate;
-    }
-
-    public Date getDate() {
+    public Calendar getDate() {
         return date;
+    }
+
+    public Exchange getRate() {
+        return rate;
     }
 
     @Override
     public String toString() {
-        return "ExchangeRate{" + "from=" + from + ", to=" + to + ", rate=" + rate + '}';
+        return "fromCurrency: " + this.fromCurrency
+                + " toCurrency: " + this.toCurrency
+                + " date: " + this.date.get(Calendar.YEAR) + "-" + this.date.get(Calendar.MONTH) + 1 + "-" + this.date.get(Calendar.DAY_OF_MONTH)
+                + " rate: " + this.rate;
     }
 }
