@@ -1,6 +1,6 @@
-package moneycalculator.persistence;
+package persistence;
 
-import moneycalculator.model.Currency;
+import model.Currency;
 
 public class CurrencySetLoader {
     public CurrencySetLoader(Currency[] currency){
