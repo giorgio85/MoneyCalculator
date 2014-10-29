@@ -26,6 +26,7 @@ public class CurrencySetLoader {
         } catch (SQLException e) {
         } finally {
             try {
+//db.close();
                 if (resultado != null) {
                     resultado.close();
                 }
