@@ -30,9 +30,7 @@ public class ExchangeRateLoader {
                 rate = linea;
             }
         } catch (MalformedURLException e1) {
-            e1.printStackTrace();
         } catch (IOException e1) {
-            e1.printStackTrace();
         } finally {
             if (null != connection) {
                 connection.disconnect();
