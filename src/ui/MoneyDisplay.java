@@ -15,6 +15,7 @@ public class MoneyDisplay {
     }
 
     public void execute() {
+        System.out.println("The result is:");
         System.out.println(money);
     }
 }

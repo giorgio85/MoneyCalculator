@@ -14,7 +14,7 @@ public class ExchangeDialog {
     }
 
     public void execute() {
-        this.exchange = new Exchange(new Money(100, currencySet.get(null)), currencySet.get(null));
+        this.exchange = new Exchange(new Money(100.0, currencySet.get(null)), currencySet.get(null));
     }
 
     public Exchange getExchange() {

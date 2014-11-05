@@ -1,6 +1,5 @@
 package persistence;
 
-import java.util.HashMap;
 import model.Currency;
 import model.CurrencySet;
 
