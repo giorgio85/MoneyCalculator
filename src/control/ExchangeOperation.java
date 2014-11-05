@@ -20,7 +20,7 @@ public class ExchangeOperation {
         Exchange exchange = readExchange();
         ExchangeRate exchangeRate = readExchangeRate();
         Money money = calculate(exchange.getAmount(), exchangeRate);
-        show(money);
+        DisplayMoney(money);
     }
 
     private Exchange readExchange() {
@@ -33,7 +33,7 @@ public class ExchangeOperation {
         return new Money(amount.getAmount() * exchangeRate.getRate(), exchangeRate.getOut());
     }
 
-    private void show(Money money) {
+    private void DisplayMoney(Money money) {
         new MoneyDisplay(money).execute();
     }
 
