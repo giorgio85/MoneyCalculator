@@ -11,7 +11,7 @@ public class CurrencySetLoader {
         currencySet.add(new Currency("EUR", "Euro", "€"));
         currencySet.add(new Currency("GBP", "Pounds", "£"));
         currencySet.add(new Currency("USD", "USD Dollar", "$"));
-        currencySet.add(new Currency("XBT", "Bitcoin", "B"));
+        currencySet.add(new Currency("YEN", "Japaneese YEN", "Y"));
         return currencySet;
     }
 }

@@ -24,7 +24,7 @@ public class ExchangeOperation {
     }
 
     private Exchange readExchange() {
-        ExchangeDialog dialog = new ExchangeDialog(currencySet);//duda
+        ExchangeDialog dialog = new ExchangeDialog(currencySet);
         dialog.execute();
         return dialog.getExchange();
     }
@@ -34,7 +34,7 @@ public class ExchangeOperation {
     }
 
     private void show(Money money) {
-        new MoneyDisplay(money).execute();//duda
+        new MoneyDisplay(money).execute();
     }
 
     private ExchangeRate readExchangeRate() {
