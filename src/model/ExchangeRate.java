@@ -1,42 +1,48 @@
 package model;
 
-import java.util.Calendar;
+import java.util.Date;
 
 public class ExchangeRate {
 
-    private Currency fromCurrency;
-    private Currency toCurrency;
-    private Calendar date;
-    private Exchange rate;
+    private final Currency in;
+    private final Currency out;
+    private double rate;
+    private Date date;
 
-    public ExchangeRate(Currency fromCurrency, Currency toCurrency, Calendar date, Exchange rate) {
-        this.fromCurrency = fromCurrency;
-        this.toCurrency = toCurrency;
-        this.date = date;
+    public ExchangeRate(Currency in, Currency out, double rate) {
+        this.in = in;
+        this.out = out;
         this.rate = rate;
     }
 
-    public Currency getFromCurrency() {
-        return fromCurrency;
+    public ExchangeRate(Currency in, Currency out, double rate, Date date) {
+        this.in = in;
+        this.out = out;
+        this.rate = rate;
+        this.date = date;
     }
 
-    public Currency getToCurrency() {
-        return toCurrency;
+    public Currency getIn() {
+        return in;
     }
 
-    public Calendar getDate() {
-        return date;
+    public Currency getOut() {
+        return out;
     }
 
-    public Exchange getRate() {
+    public double getRate() {
         return rate;
     }
 
-    @Override
-    public String toString() {
-        return "fromCurrency: " + this.fromCurrency
-                + " toCurrency: " + this.toCurrency
-                + " date: " + this.date.get(Calendar.YEAR) + "-" + this.date.get(Calendar.MONTH) + 1 + "-" + this.date.get(Calendar.DAY_OF_MONTH)
-                + " rate: " + this.rate;
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

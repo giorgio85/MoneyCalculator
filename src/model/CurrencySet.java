@@ -1,44 +1,30 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-public class CurrencySet extends HashSet<Currency> {
+public class CurrencySet implements Iterable<Currency> {
 
-    private static CurrencySet instance = null;
+    private final Map<String, Currency> map;
 
-    private CurrencySet() {
-        super();
+    public CurrencySet() {
+        this.map = new HashMap<>();
     }
 
-    public static CurrencySet getInstance() {
-        if (instance == null) {
-            instance = new CurrencySet();
-        }
-        return instance;
+    public Currency get(String name) {
+        return map.get(name);
     }
 
-    public Currency get(String code) {
-        for (Currency currency : this) {
-            if (currency.getCode().equalsIgnoreCase(code)) {
-                return currency;
-            }
+    public void add(Currency currency) {
+        if (map.containsKey(currency.getCode())) {
+            return;
         }
-        return null;
+        map.put(currency.getCode(), currency);
     }
 
-    public Currency[] search(String token) {
-        ArrayList<Currency> list = new ArrayList<>();
-        for (Currency currency : this) {
-            if (currency.getCode().equalsIgnoreCase(token)) {
-                list.add(currency);
-            } else if (currency.getSymbol().equalsIgnoreCase(token)) {
-                list.add(currency);
-            } else if (currency.getName().toLowerCase().contains(token.toLowerCase())) {
-                list.add(currency);
-            }
-        }
-        Currency[] currency = new Currency[(list.size())];
-        return list.toArray(currency);
+    @Override
+    public Iterator<Currency> iterator() {
+        return map.values().iterator();
     }
 }

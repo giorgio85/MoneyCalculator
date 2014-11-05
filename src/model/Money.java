@@ -2,15 +2,15 @@ package model;
 
 public class Money {
 
-    private Number amount;
-    private Currency currency;
+    private final double amount;
+    private final Currency currency;
 
-    public Money(Number amount, Currency currency) {
+    public Money(double amount, Currency currency) {
         this.amount = amount;
         this.currency = currency;
     }
 
-    public Number getAmount() {
+    public double getAmount() {
         return amount;
     }
 
@@ -18,4 +18,8 @@ public class Money {
         return currency;
     }
 
+    @Override
+    public String toString() {
+        return "" + amount;
+    }
 }
